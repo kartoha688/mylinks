@@ -3,34 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфоліо Саші — веброзробника, який створює сучасні та красиві сайти.">
+    <meta name="theme-color" content="#1a130d">
 
     <title>Саша | Моє портфоліо</title>
 
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐒</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <a class="skip-link" href="#main">Перейти до вмісту</a>
+
     <header>
         <div class="logo">Я <span>Саша</span></div>
 
-        <nav>
+        <nav id="mainNav">
             <a href="#home">Головна</a>
             <a href="#about">Про мене</a>
             <a href="#projects">Проєкти</a>
             <a href="#contact">Контакти</a>
         </nav>
 
-        <button id="themeBtn">🌙</button>
+        <div class="header-actions">
+            <button id="themeBtn" aria-label="Перемкнути тему оформлення" aria-pressed="false">🌙</button>
+            <button id="menuBtn" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mainNav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
 
-    <main>
+    <main id="main">
 
         <!-- Головний блок -->
         <section id="home" class="hero">
 
-            <div class="floaties">
+            <div class="floaties" aria-hidden="true">
                 <span>🍌</span>
                 <span>🍌</span>
                 <span>🍌</span>
@@ -39,7 +49,13 @@
             </div>
 
             <div class="avatar">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTraMohRiVR4tyJu2a_WN0-kh0trt0US2EpdpQ9rlVRxA&s=10" alt="Саша">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTraMohRiVR4tyJu2a_WN0-kh0trt0US2EpdpQ9rlVRxA&s=10"
+                    alt="Фото профілю Саші"
+                    loading="eager"
+                    width="130"
+                    height="130"
+                >
             </div>
 
             <h1>Привіт! Я <span>Саша</span></h1>
@@ -50,9 +66,9 @@
             </p>
 
             <div class="socials">
-                <a href="#">Instagram</a>
-                <a href="#">GitHub</a>
-                <a href="#">Telegram</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Telegram</a>
             </div>
 
             <a href="#projects" class="main-btn">
@@ -61,7 +77,7 @@
 
             <div class="feed">
                 <button id="feedBtn">🍌 Нагодувати мавпочку</button>
-                <p id="feedCount">З'їдено бананів: 0</p>
+                <p id="feedCount" role="status" aria-live="polite">З'їдено бананів: 0</p>
             </div>
 
         </section>
@@ -82,28 +98,28 @@
 
                 <div class="skill">
                     <h3>HTML</h3>
-                    <div class="progress">
+                    <div class="progress" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Рівень володіння HTML">
                         <div style="width: 90%"></div>
                     </div>
                 </div>
 
                 <div class="skill">
                     <h3>CSS</h3>
-                    <div class="progress">
+                    <div class="progress" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Рівень володіння CSS">
                         <div style="width: 85%"></div>
                     </div>
                 </div>
 
                 <div class="skill">
                     <h3>JavaScript</h3>
-                    <div class="progress">
+                    <div class="progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Рівень володіння JavaScript">
                         <div style="width: 70%"></div>
                     </div>
                 </div>
 
                 <div class="skill">
                     <h3>Python</h3>
-                    <div class="progress">
+                    <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Рівень володіння Python">
                         <div style="width: 75%"></div>
                     </div>
                 </div>
@@ -121,34 +137,43 @@
             <div class="projects">
 
                 <div class="project">
-                    <div class="project-icon">🌐</div>
+                    <div class="project-icon" aria-hidden="true">🌐</div>
                     <h3>JYSK Website</h3>
                     <p>
                         Сучасний сайт магазину товарів для дому.
                     </p>
-                    <button onclick="showProject('JYSK Website')">
+                    <button
+                        data-title="JYSK Website"
+                        data-text="Сучасний сайт магазину товарів для дому: адаптивна верстка, каталог товарів та кошик покупок."
+                    >
                         Переглянути
                     </button>
                 </div>
 
                 <div class="project">
-                    <div class="project-icon">🎮</div>
+                    <div class="project-icon" aria-hidden="true">🎮</div>
                     <h3>Game Project</h3>
                     <p>
                         Ігровий проєкт, створений за допомогою Python.
                     </p>
-                    <button onclick="showProject('Game Project')">
+                    <button
+                        data-title="Game Project"
+                        data-text="Невеликий ігровий проєкт на Python з власною логікою та простим інтерфейсом."
+                    >
                         Переглянути
                     </button>
                 </div>
 
                 <div class="project">
-                    <div class="project-icon">☕</div>
+                    <div class="project-icon" aria-hidden="true">☕</div>
                     <h3>Coffee Website</h3>
                     <p>
                         Стильний сайт кав'ярні з меню та контактами.
                     </p>
-                    <button onclick="showProject('Coffee Website')">
+                    <button
+                        data-title="Coffee Website"
+                        data-text="Стильний односторінковий сайт кав'ярні з меню, галереєю та формою бронювання."
+                    >
                         Переглянути
                     </button>
                 </div>
@@ -163,31 +188,50 @@
 
             <h2>Зв'язатися зі мною</h2>
 
-            <form id="contactForm">
+            <form id="contactForm" novalidate>
 
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Ваше ім'я"
-                    required
-                >
+                <div class="field">
+                    <label for="name">Ваше ім'я</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Ваше ім'я"
+                        required
+                        minlength="2"
+                    >
+                    <span class="error" id="nameError"></span>
+                </div>
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Ваш Email"
-                    required
-                >
+                <div class="field">
+                    <label for="email">Ваш Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Ваш Email"
+                        required
+                    >
+                    <span class="error" id="emailError"></span>
+                </div>
 
-                <textarea
-                    id="message"
-                    placeholder="Ваше повідомлення"
-                    required
-                ></textarea>
+                <div class="field">
+                    <label for="message">Ваше повідомлення</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Ваше повідомлення"
+                        required
+                        minlength="5"
+                    ></textarea>
+                    <span class="error" id="messageError"></span>
+                </div>
 
                 <button type="submit">
                     Надіслати
                 </button>
+
+                <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
 
             </form>
 
@@ -201,9 +245,18 @@
     </footer>
 
 
-    <button id="topBtn" title="Нагору">🐒</button>
+    <!-- Модальне вікно для проєктів -->
+    <div id="projectModal" class="modal" hidden>
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="modalClose" aria-label="Закрити">✕</button>
+            <h3 id="modalTitle"></h3>
+            <p id="modalText"></p>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <button id="topBtn" title="Нагору" aria-label="Прогорнути нагору">🐒</button>
+
+    <script src="script.js" defer></script>
 
 </body>
 </html>
