@@ -1,0 +1,503 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #1a130d;
+    color: white;
+    transition: 0.3s;
+}
+
+/* Шапка */
+header {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(15, 16, 32, 0.9);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #a0724a;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #a0724a;
+}
+
+#themeBtn {
+    border: none;
+    background: #3a2c20;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* Головний блок */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(circle at top, #3d2a1a, #1a130d 55%);
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    font-size: 40px;
+    font-weight: bold;
+
+    background: linear-gradient(135deg, #a0724a, #d9a066);
+
+    box-shadow: 0 0 40px #a0724a;
+
+    margin-bottom: 25px;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #e0b98a;
+}
+
+.hero p {
+    max-width: 600px;
+    color: #bbb;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.socials a {
+    padding: 10px 18px;
+    border: 1px solid #444;
+    border-radius: 10px;
+
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background: #a0724a;
+    transform: translateY(-4px);
+}
+
+.main-btn {
+    background: #a0724a;
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #a0724a;
+}
+
+
+/* Годівниця для мавпочки */
+.feed {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.feed button {
+    border: none;
+    background: #241a12;
+    color: #e0b98a;
+    border: 1px solid #4a3625;
+
+    padding: 12px 20px;
+    border-radius: 12px;
+
+    font-size: 15px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.feed button:hover {
+    background: #a0724a;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.feed p {
+    color: #d9a066;
+    font-size: 14px;
+}
+
+.avatar.bounce {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.15) rotate(-4deg); }
+    60%  { transform: scale(0.95) rotate(3deg); }
+    100% { transform: scale(1); }
+}
+
+
+/* Літаючі декорації в hero */
+.floaties {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floaties span {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.5;
+    animation: floatUp linear infinite;
+}
+
+.floaties span:nth-child(1) { left: 10%; top: 100%; animation-duration: 14s; animation-delay: 0s; }
+.floaties span:nth-child(2) { left: 85%; top: 100%; animation-duration: 18s; animation-delay: 3s; }
+.floaties span:nth-child(3) { left: 45%; top: 100%; animation-duration: 16s; animation-delay: 6s; }
+.floaties span:nth-child(4) { left: 25%; top: 100%; animation-duration: 20s; animation-delay: 2s; font-size: 24px; }
+.floaties span:nth-child(5) { left: 65%; top: 100%; animation-duration: 22s; animation-delay: 8s; font-size: 24px; }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* Кнопка "нагору" */
+#topBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #a0724a, #d9a066);
+    color: white;
+    font-size: 24px;
+
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition: 0.3s;
+
+    z-index: 200;
+}
+
+#topBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#topBtn:hover {
+    transform: scale(1.1);
+}
+
+
+/* Секції */
+.section {
+    padding: 100px 8%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 35px;
+}
+
+.description {
+    max-width: 700px;
+    margin: auto;
+
+    text-align: center;
+
+    color: #bbb;
+    line-height: 1.7;
+}
+
+
+/* Навички */
+.skills {
+    max-width: 700px;
+    margin: 50px auto 0;
+}
+
+.skill {
+    margin-bottom: 25px;
+}
+
+.skill h3 {
+    margin-bottom: 8px;
+}
+
+.progress {
+    width: 100%;
+    height: 10px;
+
+    background: #3a2c1e;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress div {
+    height: 100%;
+    background: linear-gradient(90deg, #a0724a, #d9a066);
+}
+
+
+/* Проєкти */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project {
+    padding: 30px;
+
+    background: #241a12;
+
+    border: 1px solid #4a3625;
+    border-radius: 18px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    border-color: #a0724a;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+.project-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.project h3 {
+    margin-bottom: 10px;
+}
+
+.project p {
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.project button {
+    border: none;
+    background: #a0724a;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/* Форма */
+form {
+    max-width: 600px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #241a12;
+    color: white;
+
+    outline: none;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+form button {
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #a0724a;
+    color: white;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* Підвал */
+footer {
+    text-align: center;
+    padding: 30px;
+
+    background: #100b07;
+    color: #888;
+}
+
+
+/* Світла тема */
+.light {
+    background: #f5f5f5;
+    color: #222;
+}
+
+.light header {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.light nav a {
+    color: #222;
+}
+
+.light .hero {
+    background: linear-gradient(135deg, #eee8ff, #ffffff);
+}
+
+.light .project {
+    background: white;
+}
+
+.light input,
+.light textarea {
+    background: white;
+    color: #222;
+}
+
+
+/* Телефон */
+@media (max-width: 750px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 80px 20px;
+    }
+}

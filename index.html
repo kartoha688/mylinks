@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Саша | Моє портфоліо</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Я <span>Саша</span></div>
+
+        <nav>
+            <a href="#home">Головна</a>
+            <a href="#about">Про мене</a>
+            <a href="#projects">Проєкти</a>
+            <a href="#contact">Контакти</a>
+        </nav>
+
+        <button id="themeBtn">🌙</button>
+    </header>
+
+
+    <main>
+
+        <!-- Головний блок -->
+        <section id="home" class="hero">
+
+            <div class="floaties">
+                <span>🍌</span>
+                <span>🍌</span>
+                <span>🍌</span>
+                <span>🍃</span>
+                <span>🍃</span>
+            </div>
+
+            <div class="avatar">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTraMohRiVR4tyJu2a_WN0-kh0trt0US2EpdpQ9rlVRxA&s=10" alt="Саша">
+            </div>
+
+            <h1>Привіт! Я <span>Саша</span></h1>
+
+            <p>
+                Веброзробник та творець цифрових проєктів.
+                Створюю сучасні та красиві сайти.
+            </p>
+
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">GitHub</a>
+                <a href="#">Telegram</a>
+            </div>
+
+            <a href="#projects" class="main-btn">
+                Переглянути проєкти
+            </a>
+
+            <div class="feed">
+                <button id="feedBtn">🍌 Нагодувати мавпочку</button>
+                <p id="feedCount">З'їдено бананів: 0</p>
+            </div>
+
+        </section>
+
+
+        <!-- Про мене -->
+        <section id="about" class="section">
+
+            <h2>Про мене</h2>
+
+            <p class="description">
+                Я займаюся створенням сайтів та різних цифрових проєктів.
+                Мені подобається поєднувати дизайн, програмування
+                та сучасні технології.
+            </p>
+
+            <div class="skills">
+
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <div class="progress">
+                        <div style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <div class="progress">
+                        <div style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <div class="progress">
+                        <div style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h3>Python</h3>
+                    <div class="progress">
+                        <div style="width: 75%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Проєкти -->
+        <section id="projects" class="section">
+
+            <h2>Мої проєкти</h2>
+
+            <div class="projects">
+
+                <div class="project">
+                    <div class="project-icon">🌐</div>
+                    <h3>JYSK Website</h3>
+                    <p>
+                        Сучасний сайт магазину товарів для дому.
+                    </p>
+                    <button onclick="showProject('JYSK Website')">
+                        Переглянути
+                    </button>
+                </div>
+
+                <div class="project">
+                    <div class="project-icon">🎮</div>
+                    <h3>Game Project</h3>
+                    <p>
+                        Ігровий проєкт, створений за допомогою Python.
+                    </p>
+                    <button onclick="showProject('Game Project')">
+                        Переглянути
+                    </button>
+                </div>
+
+                <div class="project">
+                    <div class="project-icon">☕</div>
+                    <h3>Coffee Website</h3>
+                    <p>
+                        Стильний сайт кав'ярні з меню та контактами.
+                    </p>
+                    <button onclick="showProject('Coffee Website')">
+                        Переглянути
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Контакти -->
+        <section id="contact" class="section">
+
+            <h2>Зв'язатися зі мною</h2>
+
+            <form id="contactForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Ваше ім'я"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Ваш Email"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Ваше повідомлення"
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Надіслати
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Саша. Моє портфоліо.</p>
+    </footer>
+
+
+    <button id="topBtn" title="Нагору">🐒</button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
